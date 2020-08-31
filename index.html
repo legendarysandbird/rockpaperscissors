@@ -4,90 +4,12 @@
 
     </head>
     <body>
-        <script>
-            function computerPlay() {
-                const choice = Math.ceil((Math.random() * 3));
-                switch(choice) {
-                    case 1:
-                        return "rock";
-                        break;
-                    
-                    case 2:
-                        return "paper";
-                        break;
-                    
-                    case 3:
-                        return "scissors";
-                }
-            }
-            
-            function playRound(playerSelection, computerSelection) {
-                playerSelection = playerSelection.toLowerCase();
-                if (playerSelection === computerSelection) {
-                    return "tie"
-                }
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        <p></p>
+        <div>First to 5! Make your choice.</div>
 
-                else if (playerSelection === "rock") {
-                    if (computerSelection === "paper") {
-                        return false;
-                    }
-                    else {
-                        return true;
-                    }
-                }
-
-                else if (playerSelection === "paper") {
-                    if (computerSelection === "rock") {
-                        return true
-                    }
-                    else {
-                        return false;
-                    }
-                }
-
-                else {
-                    if (computerSelection === "rock") {
-                        return false;
-                    }
-
-                    else {
-                        return true;                    }
-                }
-            }
-
-            function game() {
-                let result;
-                let move;
-                let compMove;
-                let yourScore = 0;
-                let compScore = 0;
-                for (let i = 0; i < 5; i++) {
-                    compMove = computerPlay();
-                    move = prompt("Make your choice!");
-                    result = playRound(move, compMove);
-                    if (result === true) {
-                        console.log(`You win! ${move} beats ${compMove}`);
-                        yourScore++;
-                    }
-                    else if (result === false) {
-                        console.log(`You lose! ${compMove} beats ${move}`);
-                        compScore++;
-                    }
-                    else {
-                        console.log(`It's a tie!`);
-                    }
-                }
-                if (yourScore > compScore) {
-                    console.log(`You win ${yourScore}-${compScore}`);
-                }
-                else if (compScore > yourScore) {
-                    console.log(`You lose ${compScore}-${yourScore}`);
-                }
-                else {
-                    console.log(`You tied ${yourScore}-${compScore}`);
-                }
-            }
-            game();
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
